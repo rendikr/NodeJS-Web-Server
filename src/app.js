@@ -1,24 +1,17 @@
+const path = require('path')
 const express = require('express')
+console.log(__dirname)
+console.log(path.join(__dirname, '../public'))
 
 const app = express()
+const publicDirectoryPath = path.join(__dirname, '../public')
 
-// define the route
-app.get('/', (req, res) => {
-  res.send('<h1>Weather</h1>')
-})
+// define express to also serve static files under directory
+// filename will be considered as the route path with the file extension
+// example: localhost:3000/about.html
+app.use(express.static(publicDirectoryPath))
 
-app.get('/help', (req, res) => {
-  res.send([{
-    name: 'Rendi K.'
-  }, {
-    name: 'Mila'
-  }])
-})
-
-app.get('/about', (req, res) => {
-  res.send('<h1>About</h1>')
-})
-
+// define the route except file name on public directory as they are served on code above
 app.get('/weather', (req, res) => {
   res.send({
     location: 'Jakarta',
