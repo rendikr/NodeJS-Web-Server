@@ -1,17 +1,38 @@
 const path = require('path')
 const express = require('express')
-console.log(__dirname)
-console.log(path.join(__dirname, '../public'))
 
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
 
+// tell the app to use hbs template engine
+app.set('view engine', 'hbs')
+
 // define express to also serve static files under directory
-// filename will be considered as the route path with the file extension
-// example: localhost:3000/about.html
 app.use(express.static(publicDirectoryPath))
 
-// define the route except file name on public directory as they are served on code above
+// define the route
+app.get('', (req, res) => {
+  res.render('index', {
+    title: 'Weather App',
+    author: 'Rendi K.'
+  })
+})
+
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About',
+    author: 'Rendi K.'
+  })
+})
+
+app.get('/help', (req, res) => {
+  res.render('help', {
+    title: 'Help',
+    message: 'What can I assist you with?',
+    author: 'Rendi K.'
+  })
+})
+
 app.get('/weather', (req, res) => {
   res.send({
     location: 'Jakarta',
