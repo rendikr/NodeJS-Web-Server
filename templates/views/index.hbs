@@ -7,8 +7,8 @@
   </head>
 
   <body>
-    <h1>{{ title }}</h1>
-    <hr>
-    <p>Created by {{ author }}</p>
+    {{!-- Load any partials file using the '>' sign. Must not have any spacing between the curly brackets --}}
+    {{>header}}
+    {{>footer}}
   </body>
 </html>
