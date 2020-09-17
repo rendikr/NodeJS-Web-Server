@@ -22,6 +22,7 @@
   "homepage": "https://github.com/rendikr/NodeJS-Web-Server#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "postman-request": "^2.88.1-postman.25"
   }
 }
