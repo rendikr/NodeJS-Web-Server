@@ -49,6 +49,23 @@ app.get('/weather', (req, res) => {
   })
 })
 
+// set the route for non matching with any of the route name above
+app.get('/help/*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    errorMessage: 'Help article not found',
+    author: 'Rendi K.'
+  })
+})
+
+app.get('*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    errorMessage: 'Page not found',
+    author: 'Rendi K.'
+  })
+})
+
 // start the server
 app.listen(3000, () => {
   console.log('Server is up and running on port 3000')
