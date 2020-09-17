@@ -2,13 +2,18 @@
 
 <html>
   <head>
+    <title>About</title>
+    <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
   </head>
 
   <body>
-    {{!-- Load any partials file using the '>' sign. Must not have any spacing between the curly brackets --}}
-    {{>header}}
-    <img src="/img/robot.png">
+    <div class="main-content">
+      {{!-- Load any partials file using the '>' sign. Must not have any spacing between the curly brackets --}}
+      {{>header}}
+      <img src="/img/robot.png" class="portrait">
+    </div>
+
     {{>footer}}
   </body>
 </html>

@@ -2,13 +2,19 @@
 
 <html>
   <head>
+    <title>Weather</title>
+    <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/app.js"></script>
   </head>
 
   <body>
-    {{!-- Load any partials file using the '>' sign. Must not have any spacing between the curly brackets --}}
-    {{>header}}
+    <div class="main-content">
+      {{!-- Load any partials file using the '>' sign. Must not have any spacing between the curly brackets --}}
+      {{>header}}
+      <p>Use this site to get your weather!</p>
+    </div>
+
     {{>footer}}
   </body>
 </html>
