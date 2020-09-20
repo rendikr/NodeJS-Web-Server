@@ -5,7 +5,6 @@
     <title>Weather</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/app.js"></script>
   </head>
 
   <body>
@@ -13,8 +12,15 @@
       {{!-- Load any partials file using the '>' sign. Must not have any spacing between the curly brackets --}}
       {{>header}}
       <p>Use this site to get your weather!</p>
+
+      <form>
+        <input placeholder="location"/>
+        <button>Search</button>
+      </form>
     </div>
 
     {{>footer}}
+
+    <script src="/js/app.js"></script>
   </body>
 </html>
